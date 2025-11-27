@@ -4,7 +4,7 @@
 // 	protoc        v6.33.1
 // source: hello_grpc.proto
 
-package pb
+package main
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -74,7 +74,7 @@ const file_hello_grpc_proto_rawDesc = "" +
 	"\x05value\x18\x01 \x01(\x05R\x05value21\n" +
 	"\tMyService\x12$\n" +
 	"\n" +
-	"MyFunction\x12\t.MyNumber\x1a\t.MyNumber\"\x00B\x06Z\x04.;pbb\x06proto3"
+	"MyFunction\x12\t.MyNumber\x1a\t.MyNumber\"\x00B\bZ\x06.;mainb\x06proto3"
 
 var (
 	file_hello_grpc_proto_rawDescOnce sync.Once
