@@ -17,9 +17,9 @@ func main() {
 	// (Go에서는 같은 package 내에 생성되어 있으므로 별도 import 불필요)
 
 	// (3) gRPC 통신 채널을 생성함
-	// Go에서는 grpc.Dial()을 사용하여 연결을 생성함
+	// Go에서는 grpc.NewClient()를 사용하여 연결을 생성함 (grpc.Dial은 deprecated)
 	// insecure 채널은 credentials.NewCredentials()를 사용함
-	conn, err := grpc.Dial("localhost:50051", grpc.WithTransportCredentials(credentials.NewCredentials()))
+	conn, err := grpc.NewClient("localhost:50051", grpc.WithTransportCredentials(credentials.NewCredentials()))
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
