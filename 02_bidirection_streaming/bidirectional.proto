@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = ".;main";
+
+service Bidirectional {
+    rpc MyFunction(stream Message) returns (stream Message) {}
+}
+
+message Message {
+    string message = 1;
+}
