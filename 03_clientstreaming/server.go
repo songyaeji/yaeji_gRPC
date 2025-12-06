@@ -16,7 +16,18 @@ type ClientStreamingServicer struct {
 	UnimplementedClientStreamingServer
 }
 
-//MyFunction
+func (s *ClientStreamingServicer) MyFunction(stream grpc.ClientStreamingServer[Message, Number]) error {
+	fmt.Println("Server processing gRPC client-streaming.")
+	count := 0
+	for {
+		_, err := stream.Recv()
+		if err != nil {
+			break
+		}
+		count++
+	}
+	return stream.SendAndClose(Number{Value: int32(count)})
+}
 
 func serve() {
 	server := grpc.NewServer()
