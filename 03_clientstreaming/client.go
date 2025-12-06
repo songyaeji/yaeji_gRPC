@@ -35,7 +35,7 @@ func generate_messages() []*Message {
 }
 
 func send_message(client ClientStreamingClient, ctx context.Context) {
-	stream, err := client.MyFunction()
+	stream, err := client.MyFunction(ctx)
 	if err != nil {
 		log.Fatalf("MyFunction call failed: %v", err)
 	}
