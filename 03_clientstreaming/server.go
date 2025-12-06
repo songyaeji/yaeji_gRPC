@@ -26,7 +26,7 @@ func (s *ClientStreamingServicer) MyFunction(stream grpc.ClientStreamingServer[M
 		}
 		count++
 	}
-	return stream.SendAndClose(Number{Value: int32(count)})
+	return stream.SendAndClose(&Number{Value: int32(count)})
 }
 
 func serve() {
