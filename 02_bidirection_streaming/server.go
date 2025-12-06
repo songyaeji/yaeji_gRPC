@@ -43,6 +43,7 @@ func (s *BidirectionalService) MyFunction(stream grpc.BidiStreamingServer[Messag
 			// return err: 에러 반환 -> 함수 즉시 종료
 			return err
 		}
+	}
 	// 정상적으로 루프가 종료되면 nil(에러 없음)을 반환 -> 함수를 종료
 	return nil
 }
