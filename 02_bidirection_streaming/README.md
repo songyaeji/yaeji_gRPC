@@ -1,4 +1,4 @@
-# Hello gRPC 실행 가이드
+# Bidirectional Streaming gRPC 실행 가이드
 
 ## 서버 실행 방법
 
@@ -44,4 +44,5 @@ go build -tags client -o client.exe
 - `client.go`: `//go:build client` - `-tags client` 플래그 사용 시에만 포함
 
 이를 통해 같은 패키지에서도 독립적으로 실행 가능합니다.
+
 
