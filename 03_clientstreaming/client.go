@@ -34,7 +34,25 @@ func generate_messages() []*Message {
 	return messages
 }
 
-//send_message
+func send_message(client ClientStreamingClient, ctx context.Context) {
+	stream, err := client.MyFunction()
+	if err != nil {
+		log.Fatalf("MyFunction call failed: %v", err)
+	}
+
+	messages := generate_messages()
+	for _, msg := range messages {
+		if err := stream.Send(msg); err != nil {
+			log.Fatalf("Failed to send message: %v", err)
+		}
+	}
+
+	response, err := stream.CloseAndRecv()
+	if err != nil {
+		log.Fatalf("Failed to receive response: %v", err)
+	}
+	fmt.Printf("[server to client] %d\n", response.Value)
+}
 
 func run() {
 	conn, err := grpc.NewClient("localhost:50051", grpc.WithTransportCredentials(credentials.NewCredentials()))
