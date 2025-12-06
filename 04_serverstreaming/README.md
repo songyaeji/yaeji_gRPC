@@ -1,4 +1,4 @@
-# Hello gRPC 실행 가이드
+# Serverstreaming gRPC 실행 가이드
 
 ## 서버 실행 방법
 
