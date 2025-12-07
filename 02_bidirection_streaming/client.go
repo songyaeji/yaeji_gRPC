@@ -56,7 +56,7 @@ func send_message(client BidirectionalClient, ctx context.Context) {
 	// 채널(Channel): go언어의 동시성 프로그래밍에서 goroutine 간 통신을 위한 도구
 	// bool 타입: true 또는 false 값을 전달할 수 있음
 	done := make(chan bool)
-	니
+
 	// go func() { ... }(): goroutine을 생성하여 익명 함수를 병렬로 실행
 	// goroutine(중요 별 다섯개): go언어의 경량 스레드 -> 다른 코드와 동시에 실행될 수 있음
 	// 여기서는 메시지를 보내는 작업을 별도의 goroutine에서 실행 -> 메시지를 받는 작업과 동시에 진행할 수 있게 함 -> 병렬 처리
